@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --watch './src/**/*.ts' --ignore './src/**/*.spec.ts' --exec ts-node ./src/server.ts",
+    "dev": "nodemon --exec ts-node src/server.ts",
     "build": "rimraf dist && tsc",
     "start": "dotenv -e .env.prod -- node dist/src/server.js",
     "test": "dotenv -e .env -- jest -c jest.config.json"
