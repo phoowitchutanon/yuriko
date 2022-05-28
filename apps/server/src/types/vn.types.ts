@@ -1,59 +1,58 @@
-import { Field, InterfaceType, ObjectType } from 'type-graphql'
+import { Field, InterfaceType, ObjectType } from "type-graphql";
 
 @ObjectType()
 export class vnDbStatus {
   @Field()
-    users: number
+  users: number;
 
   @Field()
-    threads: number
-  
-  @Field()
-    tags: number
+  threads: number;
 
   @Field()
-    releases: number
+  tags: number;
 
   @Field()
-    producers: number
+  releases: number;
 
   @Field()
-    chars: number
-  
-  @Field()
-    posts: number
+  producers: number;
 
   @Field()
-    vn: number
+  chars: number;
 
   @Field()
-    traits: number
+  posts: number;
+
+  @Field()
+  vn: number;
+
+  @Field()
+  traits: number;
 }
 
 @ObjectType()
 export class vnDbStatusResponse {
   @Field()
-    message: string
+  message: string;
 
   @Field(() => vnDbStatus)
-    data: vnDbStatus
+  data: vnDbStatus;
 }
 
 @ObjectType()
 export class vnInfo {
+  @Field()
+  id: number;
 
   @Field()
-    id: number
-
-  @Field()
-    title: string
+  title: string;
 
   @Field({ nullable: true })
-    original?: string
+  original?: string;
 
   @Field({ nullable: true })
-    released?: string
-  
+  released?: string;
+
   // @Field()
   //   languages: string[]
 
@@ -64,22 +63,22 @@ export class vnInfo {
   //   platforms: string[]
 
   @Field({ nullable: true })
-    aliases?: string
+  aliases?: string;
 
   @Field()
-    length?: number
-  
+  length?: number;
+
   @Field()
-    description?: string
+  description?: string;
 
   // @Field()
   //   links: object
 
   @Field({ nullable: true })
-    image?: string
+  image?: string;
 
   @Field()
-    image_nsfw: boolean
+  image_nsfw: boolean;
 
   // @Field()
   //   image_flagging?: object
@@ -89,18 +88,18 @@ export class vnInfo {
 
   // @Field()
   //   relations: object[]
-  
+
   // @Field()
   //   tags: [][]
 
   @Field()
-    popularity: number
+  popularity: number;
 
   @Field()
-    rating: number
+  rating: number;
 
   @Field()
-    votecount: number
+  votecount: number;
 
   // @Field()
   //   screens: object[]
@@ -112,8 +111,8 @@ export class vnInfo {
 @ObjectType()
 export class vnInfoResponse {
   @Field()
-    message: string
+  message: string;
 
   @Field(() => vnInfo)
-    data?: vnInfo
+  data?: vnInfo;
 }
