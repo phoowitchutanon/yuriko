@@ -1,4 +1,4 @@
-import { Field, InterfaceType, ObjectType } from "type-graphql";
+import { Field, ObjectType } from "type-graphql";
 
 @ObjectType()
 export class vnDbStatus {
@@ -40,6 +40,129 @@ export class vnDbStatusResponse {
 }
 
 @ObjectType()
+class vnInfoAnime {
+  @Field()
+    id: number
+
+  @Field({ nullable: true })
+    ann_id?: number
+  
+  @Field({ nullable: true })
+    nfo_id?: string
+
+  @Field({ nullable: true })
+    title_romaji?: string
+
+  @Field({ nullable: true })
+    title_kanji?: string
+
+  @Field({ nullable: true })
+    year?: number
+  
+  @Field({ nullable: true })
+    type?: string
+}
+
+@ObjectType()
+class vnInfoLinks {
+  @Field({ nullable: true })
+    wikipedia?: string
+
+  @Field({ nullable: true })
+    encubed?: string
+
+  @Field({ nullable: true })
+    renai?: string
+
+  @Field({ nullable: true })
+    wikidata?: string
+}
+
+@ObjectType()
+class vnInfoImageFlagging {
+  @Field()
+    votecount: number
+
+  @Field({ nullable: true })
+    sexual_avg?: number
+
+  @Field({ nullable: true })
+    violence_avg?: number
+}
+
+@ObjectType()
+class vnInfoScreens {
+  @Field()
+    image: string
+
+  @Field()
+    rid: number
+
+  @Field()
+    nsfw: boolean
+
+  @Field(() => vnInfoImageFlagging)
+    flagging: vnInfoImageFlagging
+
+  @Field()
+    height: number
+
+  @Field()
+    width: number
+}
+
+@ObjectType()
+class vnInfoRelations {
+  @Field()
+    id: number
+
+  @Field()
+    relation: string
+
+  @Field()
+    title: string
+
+  @Field({ nullable: true })
+    orignal?: string
+
+  @Field()
+    official: boolean
+}
+
+// @ObjectType()
+// class vnInfoTags {
+//   @Field()
+//     tag_id: number
+
+//   @Field()
+//     score: number
+    
+//   @Field()
+//     spoiler_level: number
+// }
+
+@ObjectType()
+class vnInfoStaff {
+  @Field()
+    sid: number
+
+  @Field()
+    aid: number
+
+  @Field()
+    name: string
+
+  @Field({ nullable: true })
+    orignal?: string
+
+  @Field()
+    role: string
+
+  @Field({ nullable: true })
+    note?: string
+}
+
+@ObjectType()
 export class vnInfo {
   @Field()
   id: number;
@@ -53,44 +176,44 @@ export class vnInfo {
   @Field({ nullable: true })
   released?: string;
 
-  // @Field()
-  //   languages: string[]
+  @Field(() => [String])
+    languages: string[]
 
-  // @Field()
-  //   orig_lang: string[]
+  @Field(() => [String])
+    orig_lang: string[]
 
-  // @Field()
-  //   platforms: string[]
-
-  @Field({ nullable: true })
-  aliases?: string;
-
-  @Field()
-  length?: number;
-
-  @Field()
-  description?: string;
-
-  // @Field()
-  //   links: object
+  @Field(() => [String])
+    platforms: string[]
 
   @Field({ nullable: true })
-  image?: string;
+    aliases?: string;
+
+  @Field({ nullable: true })
+    length?: number;
+
+  @Field({ nullable: true })
+    description?: string;
+
+  @Field(() => vnInfoLinks)
+    links: vnInfoLinks
+
+  @Field({ nullable: true })
+    image?: string;
 
   @Field()
-  image_nsfw: boolean;
+    image_nsfw: boolean;
 
-  // @Field()
-  //   image_flagging?: object
+  @Field(() => vnInfoImageFlagging,{ nullable: true })
+    image_flagging?: vnInfoImageFlagging
 
-  // @Field()
-  //   anime: object[]
+  @Field(() => [vnInfoAnime])
+    anime: vnInfoAnime[]
 
-  // @Field()
-  //   relations: object[]
+  @Field(() => [vnInfoRelations])
+    relations: vnInfoRelations[]
 
-  // @Field()
-  //   tags: [][]
+  // @Field(() => [vnInfoTags])
+  //   tags: vnInfoTags[]
 
   @Field()
   popularity: number;
@@ -101,11 +224,11 @@ export class vnInfo {
   @Field()
   votecount: number;
 
-  // @Field()
-  //   screens: object[]
+  @Field(() => [vnInfoScreens])
+    screens: vnInfoScreens[]
 
-  // @Field()
-  //   staff: object[]
+  @Field(() => [vnInfoStaff])
+    staff: vnInfoStaff[]
 }
 
 @ObjectType()

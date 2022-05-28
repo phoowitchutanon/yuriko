@@ -28,6 +28,7 @@ export class vndbResolver {
     try {
       const data = await vndbService.getVisualNovelById(id);
       const dataItems = { ...data.items }["0"];
+      console.log(dataItems)
       return { message: "Successful", data: dataItems };
     } catch (err) {
       return { message: "Internal server error" };
