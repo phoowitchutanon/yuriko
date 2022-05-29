@@ -1,5 +1,13 @@
 # Yuriko
 
+
+# Projects in this monorepo
+
+| Folder                  | Version      | Description                          |
+| ----------------------- | ------------ | ------------------------------------ |
+| [client](./apps/client) | 1.0.0        | Frontend for the user.               |
+| [server](./apps/server) | 1.0.0        | Backend for [client](./apps/client). |
+
 ## Setup
 
 Install dependencies:
