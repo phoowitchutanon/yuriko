@@ -1,7 +1,5 @@
 # Yuriko
 
-Alternative vndb frontend
-
 ## Setup
 
 Install dependencies:
