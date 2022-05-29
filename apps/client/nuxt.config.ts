@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   meta: {
-    title: 'OMTHT2022 | osu!mania Thailand Tournament 2022',
+    title: 'Yuriko',
     htmlAttrs: {
       lang: 'en',
     },

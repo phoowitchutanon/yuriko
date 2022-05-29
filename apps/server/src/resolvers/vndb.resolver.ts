@@ -11,7 +11,7 @@ import vndbService from '../services/vndb.service'
 @Resolver()
 export class vndbResolver {
   @Query(() => vnDbStatusResponse)
-  async getVNDbStatus() {
+  async getStatus() {
     try {
       const data = await vndbService.getStatus()
       return { message: 'Successful', data }
@@ -22,7 +22,7 @@ export class vndbResolver {
   }
 
   @Query(() => vnInfoResponse)
-  async getVNById(@Arg('id') id: number) {
+  async getVnById(@Arg('id') id: number) {
     try {
       const data = await vndbService.getVisualNovelById(id)
       const dataItems = { ...data.items }['0']
