@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon --exec ts-node src/server.ts",
     "build": "rimraf dist && tsc",
-    "start": "dotenv -e .env.prod -- node dist/src/server.js",
+    "start": "dotenv -e .env.prod -- node dist/server.js",
     "test": "dotenv -e .env -- jest -c jest.config.json"
   },
   "devDependencies": {

@@ -9,50 +9,79 @@ const vnName = route.query.vnName
 
 const vnData = ref(null)
 
-const getVnById = useQuery({
-  query:
-  `
-    query GetVnById($vnId: Float!) {
-      getVnById(id: $vnId) {
-        message
-        data {
-          id
-          title
-          original
-          released
-          languages
-          orig_lang
-          platforms
-          aliases
-          length
-          description
-          links { wikipedia, encubed, renai, wikidata }
-          image
-          image_nsfw
-          image_flagging { votecount, sexual_avg, violence_avg }
-          anime { id, ann_id, nfo_id, title_romaji, title_kanji, year, type }
-          relations { id, relation, title, orignal, official }
-          popularity
-          rating
-          votecount
-          screens { image, rid, nsfw, flagging { votecount, sexual_avg, violence_avg }, height, width }
-          staff { sid, aid, name, orignal, role, note }
+if (vnId) {
+  const getVnById = useQuery({
+    query:
+    `
+      query GetVnById($vnId: Float!) {
+        getVnById(id: $vnId) {
+          message
+          data {
+            id
+            title
+            original
+            released
+            languages
+            orig_lang
+            platforms
+            aliases
+            length
+            description
+            links { wikipedia, encubed, renai, wikidata }
+            image
+            image_nsfw
+            image_flagging { votecount, sexual_avg, violence_avg }
+            anime { id, ann_id, nfo_id, title_romaji, title_kanji, year, type }
+            relations { id, relation, title, orignal, official }
+            popularity
+            rating
+            votecount
+            screens { image, rid, nsfw, flagging { votecount, sexual_avg, violence_avg }, height, width }
+            staff { sid, aid, name, orignal, role, note }
+          }
         }
       }
-    }
-  `,
-  variables: { vnId },
-})
-
-const getVnByName = useQuery({
-
-})
-
-if (vnId) {
+    `,
+    variables: { vnId },
+  })
   const { data } = await getVnById
   vnData.value = data.value.getVnById.data
 }
 else if (vnName) {
+  const getVnByName = useQuery({
+    query:
+    `
+      query GetVnByName($vnName: String!) {
+        getVnByName(name: $vnName) {
+          message
+          data {
+            id
+            title
+            original
+            released
+            languages
+            orig_lang
+            platforms
+            aliases
+            length
+            description
+            links { wikipedia, encubed, renai, wikidata }
+            image
+            image_nsfw
+            image_flagging { votecount, sexual_avg, violence_avg }
+            anime { id, ann_id, nfo_id, title_romaji, title_kanji, year, type }
+            relations { id, relation, title, orignal, official }
+            popularity
+            rating
+            votecount
+            screens { image, rid, nsfw, flagging { votecount, sexual_avg, violence_avg }, height, width }
+            staff { sid, aid, name, orignal, role, note }
+          }
+        }
+      }
+    `,
+    variables: { vnName },
+  })
   const { data } = await getVnByName
   vnData.value = data.value.getVnByName.data
 }
@@ -77,7 +106,6 @@ else {
         </h1>
       </div>
     </div>
-    <!--  -->
   </div>
 </template>
 

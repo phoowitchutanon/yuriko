@@ -32,4 +32,16 @@ export class vndbResolver {
       return { message: 'Internal server error' }
     }
   }
+
+  @Query(() => vnInfoResponse)
+  async getVnByName(@Arg('name') name: string) {
+    try {
+      const data = await vndbService.getVisualNovelByName(name)
+      const dataItems = { ...data.items }['0']
+      return { message: 'Successful', data: dataItems }
+    }
+    catch (err) {
+      return { message: 'Internal server error' }
+    }
+  }
 }

@@ -38,4 +38,18 @@ async function getVisualNovelById(id: number) {
   return data
 }
 
-export default { getStatus, getVisualNovelById }
+async function getVisualNovelByName(name: string) {
+  const data = await vndb
+    .query(
+      `get vn basic,details,anime,relations,tags,stats,screens,staff (search ~ "${name}")`,
+    )
+    .then((res) => {
+      return res
+    })
+    .catch((res) => {
+      return res
+    })
+  return data
+}
+
+export default { getStatus, getVisualNovelById, getVisualNovelByName }
