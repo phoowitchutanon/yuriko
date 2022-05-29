@@ -10,6 +10,10 @@ function submitInput() {
   if (id || name)
     router.push({ name: 'vn', query: { vnId: id, vnName: name } })
 }
+
+useHead({
+  title: 'Yuriko | Search',
+})
 </script>
 
 <template>

@@ -1,3 +1,9 @@
+<script setup>
+useHead({
+  title: 'Yuriko | Home',
+})
+</script>
+
 <template>
   <div class="flex h-164">
     <div class="m-auto">

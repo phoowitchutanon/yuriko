@@ -8,10 +8,12 @@ const vnId = parseInt(route.query.vnId)
 const vnName = route.query.vnName
 
 const vnData = ref(null)
+const vnTitle = ref('')
 
 if (vnId) {
-  const getVnById = useQuery({
-    query:
+  try {
+    const getVnById = useQuery({
+      query:
     `
       query GetVnById($vnId: Float!) {
         getVnById(id: $vnId) {
@@ -42,14 +44,20 @@ if (vnId) {
         }
       }
     `,
-    variables: { vnId },
-  })
-  const { data } = await getVnById
-  vnData.value = data.value.getVnById.data
+      variables: { vnId },
+    })
+    const { data } = await getVnById
+    vnData.value = data.value.getVnById.data
+    vnTitle.value = vnData.value.title
+  }
+  catch {
+    router.push('/')
+  }
 }
 else if (vnName) {
-  const getVnByName = useQuery({
-    query:
+  try {
+    const getVnByName = useQuery({
+      query:
     `
       query GetVnByName($vnName: String!) {
         getVnByName(name: $vnName) {
@@ -80,14 +88,23 @@ else if (vnName) {
         }
       }
     `,
-    variables: { vnName },
-  })
-  const { data } = await getVnByName
-  vnData.value = data.value.getVnByName.data
+      variables: { vnName },
+    })
+    const { data } = await getVnByName
+    vnData.value = data.value.getVnByName.data
+    vnTitle.value = vnData.value.title
+  }
+  catch {
+    router.push('/')
+  }
 }
 else {
   router.push('/')
 }
+
+useHead({
+  title: `Yuriko | ${vnData.value.title}`,
+})
 </script>
 
 <template>
