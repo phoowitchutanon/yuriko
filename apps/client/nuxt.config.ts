@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   meta: {
-    title: 'Yuriko',
+    title: 'Yuriko | Alternative frontend for VNDB website',
     htmlAttrs: {
       lang: 'en',
     },
@@ -29,13 +29,13 @@ export default defineNuxtConfig({
       { name: 'browsermode', content: 'application' },
 
       { hid: 'og:type', name: 'og:type', content: 'website' },
-      // { hid: 'og:image:width', name: 'og:image:width', content: '1440' },
-      // { hid: 'og:image:height', name: 'og:image:height', content: '779' },
+      { hid: 'og:image:width', name: 'og:image:width', content: '1920' },
+      { hid: 'og:image:height', name: 'og:image:height', content: '1080' },
       { hid: 'og:url', name: 'og:url', content: 'https://yuriko.gusbell.tech' },
       { hid: 'og:title', name: 'og:title', content: 'Yuriko' },
       { hid: 'description', name: 'description', content: 'Alternative frontend for VNDB website' },
       { hid: 'og:description ', name: 'og:description', content: 'Alternative frontend for VNDB website' },
-      // { hid: 'og:image', name: 'og:image', content: 'https://cdn.discordapp.com/attachments/888349851870429184/925264302166933525/og_img.png' },
+      { hid: 'og:image', name: 'og:image', content: '/og_img.png' },
       { hid: 'keywords', name: 'keywords', content: ['yuriko', 'vndb', 'visual novels'] },
     ],
     link: [

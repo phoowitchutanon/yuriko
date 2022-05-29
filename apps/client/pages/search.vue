@@ -24,7 +24,7 @@ useHead({
 
 <template>
   <div>
-    <div class="flex h-full w-96 mx-auto mt-8 py-4 bg-gray-50 shadow-xl">
+    <div class="flex h-full w-96 mx-auto mt-16 py-4 bg-gray-50 shadow-2xl rounded-xl">
       <div class="flex h-full w-full flex-col gap-6">
         <h1 class="text-3xl text-center">
           Search VNs
