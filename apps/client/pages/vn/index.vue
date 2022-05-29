@@ -108,21 +108,61 @@ useHead({
 </script>
 
 <template>
-  <div class="flex h-full w-full flex-col p-8">
+  <div class="h-full w-full xl:px-16 xl:py-8 p-8">
     <div class="flex flex-row gap-8">
-      <img :src="vnData.image" alt="">
+      <img :src="vnData.image" class="w-[256px] h-[357px]">
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-row gap-4 ">
+          <h1 class="text-2xl">
+            {{ vnData.title }}
+          </h1>
+          <h2 class="text-xl">
+            {{ vnData.original }}
+          </h2>
+        </div>
+        <div class="w-366">
+          <hr class="min-w-366 border-t border-black">
+          <div class="grid grid-cols-3 grid-flow-row mt-2 gap-y-6">
+            <div class="flex flex-col gap-2">
+              <h1 class="text-2xl font-medium">
+                Aliases
+              </h1>
+              <p>
+                {{ vnData.aliases }}
+              </p>
+            </div>
+            <div class="col-span-2 row-span-3 border-1 border-black rounded-md">
+              <p class="p-2">
+                {{ vnData.description }}
+              </p>
+            </div>
+            <div class="flex flex-col gap-2 mt-4">
+              <h1 class="text-2xl font-medium">
+                Playtime
+              </h1>
+              <p class="text-xl">
+                {{ vnData.length }}
+              </p>
+            </div>
+            <div class="flex flex-col gap-2 mt-4">
+              <h1 class="text-2xl font-medium">
+                Developer
+              </h1>
+              <p class="text-xl text-red-500">
+                NOT IMPLEMENT YET
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="flex flex-col justify-center items-center gap-8">
+      <img :src="vnData.image" class="w-[256px] h-[357px]">
       <div class="flex flex-col gap-2">
         <h1 class="text-2xl font-normal">
           {{ vnData.title }}
         </h1>
-        <h2 class="text-2xl">
-          {{ vnData.original }}
-        </h2>
-        <h1 class="text-lg font-normal">
-          Aliases: {{ vnData.aliases }}
-        </h1>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
-

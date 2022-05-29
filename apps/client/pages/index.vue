@@ -38,7 +38,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex h-full xl:mt-58 mt-42">
+  <div id="bg__container" class="flex h-full xl:mt-58 mt-42">
     <div class="m-auto">
       <div class="flex flex-col gap-12 justify-center items-center">
         <h1 class="md:text-9xl text-8xl tracking-wide font-medium select-none hover:text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all ease-in-out duration-750">
