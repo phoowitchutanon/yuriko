@@ -1,7 +1,7 @@
 # Yuriko
 
 
-# Projects in this monorepo
+## Projects in this monorepo
 
 | Folder                  | Version      | Description                          |
 | ----------------------- | ------------ | ------------------------------------ |
