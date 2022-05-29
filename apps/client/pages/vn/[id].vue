@@ -2,6 +2,7 @@
 import { useQuery } from '@urql/vue'
 
 const route = useRoute()
+const router = useRouter()
 
 const vnId = parseInt(route.params.id)
 const vnData = ref(null)
@@ -84,8 +85,13 @@ const { fetching, data } = useQuery({
 
 watchEffect(() => {
   if (!fetching.value) {
-    const vnDataTmp = data.value.getVNById.data
-    vnData.value = vnDataTmp
+    try {
+      const vnDataTmp = data.value.getVNById.data
+      vnData.value = vnDataTmp
+    }
+    catch (err) {
+      router.push('/')
+    }
   }
 })
 </script>
@@ -123,11 +129,10 @@ watchEffect(() => {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .35s, transform .35s;
+  transition: opacity .5s;
 }
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(-10px);
 }
 </style>
