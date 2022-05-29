@@ -14,36 +14,36 @@ if (vnId) {
   try {
     const getVnById = useQuery({
       query:
-    `
-      query GetVnById($vnId: Float!) {
-        getVnById(id: $vnId) {
-          message
-          data {
-            id
-            title
-            original
-            released
-            languages
-            orig_lang
-            platforms
-            aliases
-            length
-            description
-            links { wikipedia, encubed, renai, wikidata }
-            image
-            image_nsfw
-            image_flagging { votecount, sexual_avg, violence_avg }
-            anime { id, ann_id, nfo_id, title_romaji, title_kanji, year, type }
-            relations { id, relation, title, orignal, official }
-            popularity
-            rating
-            votecount
-            screens { image, rid, nsfw, flagging { votecount, sexual_avg, violence_avg }, height, width }
-            staff { sid, aid, name, orignal, role, note }
+      `
+        query GetVnById($vnId: Float!) {
+          getVnById(id: $vnId) {
+            message
+            data {
+              id
+              title
+              original
+              released
+              languages
+              orig_lang
+              platforms
+              aliases
+              length
+              description
+              links { wikipedia, encubed, renai, wikidata }
+              image
+              image_nsfw
+              image_flagging { votecount, sexual_avg, violence_avg }
+              anime { id, ann_id, nfo_id, title_romaji, title_kanji, year, type }
+              relations { id, relation, title, orignal, official }
+              popularity
+              rating
+              votecount
+              screens { image, rid, nsfw, flagging { votecount, sexual_avg, violence_avg }, height, width }
+              staff { sid, aid, name, orignal, role, note }
+            }
           }
         }
-      }
-    `,
+      `,
       variables: { vnId },
     })
     const { data } = await getVnById
