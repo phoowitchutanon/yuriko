@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       { name: 'layoutmode', content: 'fitscreen/standard' },
       { name: 'format-detection', content: 'telephone=no' },
       { 'http-equiv': 'X-UA-Compatible', 'content': 'IE=edge' },
+      { 'http-equiv': 'Content-Security-Policy', 'content': 'upgrade-insecure-requests' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
 
       { name: 'mobile-web-app-capable', content: 'yes' },
