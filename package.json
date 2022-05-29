@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
-    "start": "turbo run start",
+    "start": "concurrently --kill-others-on-fail \"yarn workspace client start\"  \"yarn workspace server start\"",
     "prepare": "husky install",
     "lint": "eslint . --fix"
   },
@@ -22,6 +22,7 @@
     "@antfu/eslint-config": "0.24.3",
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
+    "concurrently": "^7.2.1",
     "eslint": "^8.16.0",
     "husky": "^8.0.0",
     "turbo": "latest",
