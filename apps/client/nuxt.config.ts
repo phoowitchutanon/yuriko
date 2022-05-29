@@ -82,6 +82,6 @@ export default defineNuxtConfig({
   },
 
   urql: {
-    url: 'http://localhost:3333/graphql',
+    url: process.env.BASE_URL || 'http://localhost:3333/graphql',
   },
 })
