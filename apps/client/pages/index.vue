@@ -26,10 +26,10 @@ try {
     `,
   })
   const { data } = await getStatus
-  statusData.value = data.value.getStatus.data
+  statusData.value = { error: false, data: data.value.getStatus.data }
 }
 catch {
-  alert('Error: failed to get status')
+  statusData.value = { error: true, data: null }
 }
 
 useHead({
@@ -41,36 +41,41 @@ useHead({
   <div class="flex h-full xl:mt-64 mt-52">
     <div class="m-auto">
       <div class="flex flex-col gap-12 justify-center items-center">
-        <h1 class="md:text-9xl text-6xl tracking-wide font-medium select-none">
+        <h1 class="md:text-9xl text-6xl tracking-wide font-medium select-none hover:text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all ease-in-out duration-750">
           Yuriko
         </h1>
         <h2 class="-mt-8 md:text-2xl text-xl tracking-wider font-light select-none">
           Alternative frontend for VNDB website
         </h2>
-        <div class="grid grid-cols-3 grid-flow-row place-items-center mt-8 gap-8 text-gray-400 select-none">
-          <p class="flex w-full flex-col justify-center items-center">
+        <div v-if="!statusData.error" class="grid grid-cols-3 grid-flow-row place-items-center mt-8 gap-8 select-none">
+          <p class="flex w-full flex-col justify-center items-center text-gray-400 hover:text-black transition-all">
             <span class="md:text-xl text-md mb-1">Visual novels</span>
-            <span>{{ statusData.vn }}</span>
+            <span>{{ statusData.data.vn }}</span>
           </p>
-          <p class="flex w-full flex-col justify-center items-center">
+          <p class="flex w-full flex-col justify-center items-center text-gray-400 hover:text-black transition-all">
             <span class="md:text-xl text-md mb-1">Releases</span>
-            <span>{{ statusData.releases }}</span>
+            <span>{{ statusData.data.releases }}</span>
           </p>
-          <p class="flex w-full flex-col justify-center items-center">
+          <p class="flex w-full flex-col justify-center items-center text-gray-400 hover:text-black transition-all">
             <span class="md:text-xl text-md mb-1">Producers</span>
-            <span>{{ statusData.vn }}</span>
+            <span>{{ statusData.data.producers }}</span>
           </p>
-          <p class="flex w-full flex-col justify-center items-center">
+          <p class="flex w-full flex-col justify-center items-center text-gray-400 hover:text-black transition-all">
             <span class="md:text-xl text-md mb-1">Charecters</span>
-            <span>{{ statusData.chars }}</span>
+            <span>{{ statusData.data.chars }}</span>
           </p>
-          <p class="flex w-full flex-col justify-center items-center">
+          <p class="flex w-full flex-col justify-center items-center text-gray-400 hover:text-black transition-all">
             <span class="md:text-xl text-md mb-1">Traits</span>
-            <span>{{ statusData.traits }}</span>
+            <span>{{ statusData.data.traits }}</span>
           </p>
-          <p class="flex w-full flex-col justify-center items-center">
+          <p class="flex w-full flex-col justify-center items-center text-gray-400 hover:text-black transition-all">
             <span class="md:text-xl text-md mb-1">Tags</span>
-            <span>{{ statusData.tags }}</span>
+            <span>{{ statusData.data.tags }}</span>
+          </p>
+        </div>
+        <div v-else>
+          <p class="mt-12 text-xl text-red-500 animate-pulse select-none transition-opacity duration-1000">
+            API ERROR
           </p>
         </div>
       </div>
