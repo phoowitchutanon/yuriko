@@ -6,19 +6,25 @@
     "apps/*",
     "packages/*"
   ],
-  "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
-    "start": "turbo run start",
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "husky": "^8.0.0",
-    "turbo": "latest"
-  },
+  "packageManager": "yarn@1.22.18",
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "yarn@1.22.18"
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "prepare": "husky install",
+    "lint": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.24.2",
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
+    "eslint": "^8.16.0",
+    "husky": "^8.0.0",
+    "turbo": "latest",
+    "typescript": "^4.7.2"
+  }
 }

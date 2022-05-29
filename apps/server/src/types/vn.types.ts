@@ -1,42 +1,42 @@
-import { Field, ObjectType } from "type-graphql";
+import { Field, ObjectType } from 'type-graphql'
 
 @ObjectType()
 export class vnDbStatus {
   @Field()
-  users: number;
+    users: number
 
   @Field()
-  threads: number;
+    threads: number
 
   @Field()
-  tags: number;
+    tags: number
 
   @Field()
-  releases: number;
+    releases: number
 
   @Field()
-  producers: number;
+    producers: number
 
   @Field()
-  chars: number;
+    chars: number
 
   @Field()
-  posts: number;
+    posts: number
 
   @Field()
-  vn: number;
+    vn: number
 
   @Field()
-  traits: number;
+    traits: number
 }
 
 @ObjectType()
 export class vnDbStatusResponse {
   @Field()
-  message: string;
+    message: string
 
   @Field(() => vnDbStatus)
-  data: vnDbStatus;
+    data: vnDbStatus
 }
 
 @ObjectType()
@@ -46,7 +46,7 @@ class vnInfoAnime {
 
   @Field({ nullable: true })
     ann_id?: number
-  
+
   @Field({ nullable: true })
     nfo_id?: string
 
@@ -58,7 +58,7 @@ class vnInfoAnime {
 
   @Field({ nullable: true })
     year?: number
-  
+
   @Field({ nullable: true })
     type?: string
 }
@@ -136,7 +136,7 @@ class vnInfoRelations {
 
 //   @Field()
 //     score: number
-    
+
 //   @Field()
 //     spoiler_level: number
 // }
@@ -165,16 +165,16 @@ class vnInfoStaff {
 @ObjectType()
 export class vnInfo {
   @Field()
-  id: number;
+    id: number
 
   @Field()
-  title: string;
+    title: string
 
   @Field({ nullable: true })
-  original?: string;
+    original?: string
 
   @Field({ nullable: true })
-  released?: string;
+    released?: string
 
   @Field(() => [String])
     languages: string[]
@@ -186,24 +186,24 @@ export class vnInfo {
     platforms: string[]
 
   @Field({ nullable: true })
-    aliases?: string;
+    aliases?: string
 
   @Field({ nullable: true })
-    length?: number;
+    length?: number
 
   @Field({ nullable: true })
-    description?: string;
+    description?: string
 
   @Field(() => vnInfoLinks)
     links: vnInfoLinks
 
   @Field({ nullable: true })
-    image?: string;
+    image?: string
 
   @Field()
-    image_nsfw: boolean;
+    image_nsfw: boolean
 
-  @Field(() => vnInfoImageFlagging,{ nullable: true })
+  @Field(() => vnInfoImageFlagging, { nullable: true })
     image_flagging?: vnInfoImageFlagging
 
   @Field(() => [vnInfoAnime])
@@ -216,13 +216,13 @@ export class vnInfo {
   //   tags: vnInfoTags[]
 
   @Field()
-  popularity: number;
+    popularity: number
 
   @Field()
-  rating: number;
+    rating: number
 
   @Field()
-  votecount: number;
+    votecount: number
 
   @Field(() => [vnInfoScreens])
     screens: vnInfoScreens[]
@@ -234,8 +234,8 @@ export class vnInfo {
 @ObjectType()
 export class vnInfoResponse {
   @Field()
-  message: string;
+    message: string
 
   @Field(() => vnInfo)
-  data?: vnInfo;
+    data?: vnInfo
 }
