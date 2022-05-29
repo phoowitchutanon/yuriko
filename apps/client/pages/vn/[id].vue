@@ -86,15 +86,48 @@ watchEffect(() => {
   if (!fetching.value) {
     const vnDataTmp = data.value.getVNById.data
     vnData.value = vnDataTmp
-    console.log(vnData)
   }
 })
 </script>
 
 <template>
-  <div>
-    <h1 class="p-8 text-xl">
-      <img :src="vnData.image" alt="">
-    </h1>
-  </div>
+  <transition name="fade">
+    <div v-if="fetching">
+      <h1 class="mt-16 p-8 text-4xl text-center">
+        Loading
+      </h1>
+    </div>
+    <div v-else>
+      <div class="flex h-full w-full flex-col p-8">
+        <div class="flex flex-row gap-8">
+          <img :src="vnData.image" alt="">
+          <div class="flex flex-col gap-2">
+            <h1 class="text-2xl font-normal">
+              {{ vnData.title }}
+            </h1>
+            <h2 class="text-2xl">
+              {{ vnData.original }}
+            </h2>
+
+            <h1 class="text-lg font-normal">
+              Aliases: {{ vnData.aliases }}
+            </h1>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+  </transition>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .35s, transform .35s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>
