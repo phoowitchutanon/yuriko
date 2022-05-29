@@ -54,7 +54,7 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/partytown',
-    '@dansmaculotte/nuxt-security',
+    // '@dansmaculotte/nuxt-security',
   ],
 
   buildModules: [
@@ -67,19 +67,19 @@ export default defineNuxtConfig({
 
   windicss: { analyze: true },
 
-  security: {
-    hsts: {
-      maxAge: 15552000,
-      preload: true,
-    },
-    referrer: 'same-origin',
-    securityFile: {
-      contacts: [
-        'https://www.gusbell.tech',
-      ],
-      preferredLanguages: ['th', 'en'],
-    },
-  },
+  // security: {
+  //   hsts: {
+  //     maxAge: 15552000,
+  //     preload: true,
+  //   },
+  //   referrer: 'same-origin',
+  //   securityFile: {
+  //     contacts: [
+  //       'https://www.gusbell.tech',
+  //     ],
+  //     preferredLanguages: ['th', 'en'],
+  //   },
+  // },
 
   urql: {
     url: process.env.BASE_URL || 'http://localhost:3333/graphql',
