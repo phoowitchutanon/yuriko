@@ -412,10 +412,10 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@builder.io/partytown@^0.5.2":
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.5.4.tgz#1a89069978734e132fa4a59414ddb64e4b94fde7"
-  integrity sha512-qnikpQgi30AS01aFlNQV6l8/qdZIcP76mp90ti+u4rucXHsn4afSKivQXApqxvrQG9+Ibv45STyvHizvxef/7A==
+"@builder.io/partytown@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.6.0.tgz#fcbad68d4b62d46f3fbd391d3fbb3afe329a7686"
+  integrity sha512-3JS8sovYVVFKnKimPnWheKwq3Tnw9bTqa/c/r9fvdDtaCRBN/9e7wgXqgiV7mwSPuuXedO3XT/CZkz/03Us7fw==
 
 "@cloudflare/kv-asset-handler@^0.2.0":
   version "0.2.0"
@@ -851,7 +851,7 @@
     unimport "^0.1.6"
     untyped "^0.4.4"
 
-"@nuxt/kit@3.0.0-rc.3", "@nuxt/kit@^3.0.0-rc.1", "@nuxt/kit@^3.0.0-rc.2", "@nuxt/kit@^3.0.0-rc.3":
+"@nuxt/kit@3.0.0-rc.3", "@nuxt/kit@^3.0.0-rc.2", "@nuxt/kit@^3.0.0-rc.3":
   version "3.0.0-rc.3"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.3.tgz#9bbedf5be268578d4002766be8eb59b976892cc6"
   integrity sha512-aD993HKXZ76cwxkM2LCwWRQaOI3RjLCg/kj+8ZS6qN4VrpwrZp4xM59YYIYs3/Vze4OG3D4+0gr0u5zdgf8v8g==
@@ -961,15 +961,16 @@
   resolved "https://registry.yarnpkg.com/@nuxt3-graphql/urql/-/urql-0.4.0.tgz#152202f55111606768aba4ddf34acc10e33e8ccb"
   integrity sha512-iQPb0uf6+tcBj7HW0VlZpOAQTTDlj7KbAVQT6az5gevYG9q4w8Jq/N4wPFPCnTg8uIEqI8qHSyUDh4G1ZPiTcw==
 
-"@nuxtjs/partytown@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/partytown/-/partytown-1.1.2.tgz#59f9c31489c2e2bc634315f6fe8034a7bee584f1"
-  integrity sha512-/k7bhIb1n/TMS7w+fkIIOMZz6zm3y8wW7c1X7+vxro9VZDSAl2H8NAVqiX5U677Hn6R2c8aiXyDN/rcgyGHfng==
+"@nuxtjs/partytown@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/partytown/-/partytown-1.2.1.tgz#3b0fa870934a367a01c3c42bd1186aac95fdc121"
+  integrity sha512-4kKza3idt1vRzLaeK4pnXeSg82iPG8cFhLcFNvyn7pNX7FLf8jciqdOY05xlKXeBYa7EY162euKHY2+eb0IXPg==
   dependencies:
-    "@builder.io/partytown" "^0.5.2"
-    "@nuxt/kit" "^3.0.0-rc.1"
+    "@builder.io/partytown" "^0.6.0"
+    "@nuxt/kit" "^3.0.0-rc.3"
     knitwork "^0.1.1"
-    ufo "^0.8.3"
+    serve-static "^1.15.0"
+    ufo "^0.8.4"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
