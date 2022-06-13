@@ -53,8 +53,6 @@ export default defineNuxtConfig({
   plugins: [],
 
   modules: [
-    '@nuxtjs/partytown',
-    '@dansmaculotte/nuxt-security',
   ],
 
   buildModules: [
@@ -66,20 +64,6 @@ export default defineNuxtConfig({
   typescript: { shim: false },
 
   windicss: { analyze: true },
-
-  security: {
-    hsts: {
-      maxAge: 15552000,
-      preload: true,
-    },
-    referrer: 'same-origin',
-    securityFile: {
-      contacts: [
-        'https://www.gusbell.tech',
-      ],
-      preferredLanguages: ['th', 'en'],
-    },
-  },
 
   urql: {
     url: process.env.BASE_URL || 'https://api.gusbell.tech:10727/graphql',
