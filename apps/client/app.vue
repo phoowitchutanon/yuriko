@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <ClientOnly>
     <nav>
       <AppLayoutNavDesktopMain />
     </nav>
@@ -9,5 +9,5 @@
     <footer>
       <AppLayoutFooter />
     </footer>
-  </div>
+  </ClientOnly>
 </template>
