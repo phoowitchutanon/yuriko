@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <AppLayoutNavDesktopMain />
+    <AppLayoutNavDesktop />
   </nav>
   <main>
     <NuxtPage />

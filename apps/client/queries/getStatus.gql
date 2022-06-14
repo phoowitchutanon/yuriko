@@ -1,0 +1,16 @@
+query GetStatus {
+  getStatus {
+    message
+    data {
+      users
+      threads
+      tags
+      releases
+      producers
+      chars
+      posts
+      vn
+      traits
+    }
+  }
+}

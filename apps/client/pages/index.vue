@@ -1,34 +1,13 @@
 <script setup>
-import { useQuery } from '@urql/vue'
-
 const statusData = ref(null)
 
 try {
-  const getStatus = useQuery({
-    query:
-    `
-      query GetStatus {
-        getStatus {
-          message
-          data {
-            users
-            threads
-            tags
-            releases
-            producers
-            chars
-            posts
-            vn
-            traits
-          }
-        }
-      }
-    `,
-  })
-  const { data } = await getStatus
-  statusData.value = { error: false, data: data.value.getStatus.data }
+  const { data } = await useAsyncData('vndbStatus', () => GqlGetStatus())
+  if (data)
+    statusData.value = { error: false, data: data.value.getStatus.data }
 }
-catch {
+catch (err) {
+  console.error(err)
   statusData.value = { error: true, data: null }
 }
 
@@ -38,7 +17,7 @@ useHead({
 </script>
 
 <template>
-  <div id="bg__container" class="flex h-full xl:mt-58 mt-42">
+  <div class="flex h-full xl:mt-58 mt-42">
     <div class="m-auto">
       <div class="flex flex-col gap-12 justify-center items-center">
         <h1 class="md:text-9xl text-8xl tracking-wide font-medium select-none hover:text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all ease-in-out duration-750">
