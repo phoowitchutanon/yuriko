@@ -13,6 +13,7 @@ import app from './app';
       resolvers: [vndbResolver],
     }),
     context: ({ req, res }) => ({ req, res }),
+    introspection: true,
   })
 
   await apolloServer.start()
