@@ -6,7 +6,27 @@ const vnId = parseInt(route.query.vnId)
 const vnName = route.query.vnName
 
 const vnData = ref(null)
-const vnTitle = ref('')
+
+try {
+  if (vnId) {
+    const { data } = await useAsyncData('vn', () => GqlGetVnById({ vnId }))
+    if (data.value.getVnById.ok)
+      vnData.value = data.value.getVnById.data
+    else
+      throw new Error(data.value.getVnById.error)
+  }
+  else if (vnName) {
+    const { data } = await useAsyncData('vn', () => GqlGetVnByName({ vnName }))
+    if (data.value.getVnByName.ok)
+      vnData.value = data.value.getVnByName.data
+    else
+      throw new Error(data.value.getVnByName.error)
+  }
+}
+catch (err) {
+  console.error(err)
+  router.push({ name: 'index' })
+}
 </script>
 
 <template>
@@ -16,7 +36,7 @@ const vnTitle = ref('')
         id: {{ vnId }}
       </h1>
       <h1 class="text-xl">
-        name: {{ vnName }}
+        name: {{ vnData.title }}
       </h1>
     </div>
   </div>

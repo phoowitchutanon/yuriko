@@ -1,6 +1,8 @@
 query GetStatus {
   getStatus {
     message
+    error,
+    ok,
     data {
       users
       threads
