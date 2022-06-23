@@ -68,7 +68,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      GQL_HOST: process.env.BASE_URL || 'https://api.gusbell.tech:10727/graphql', // overwritten by process.env.GQL_HOST
+      GQL_HOST: process.env.BASE_URL || 'https://api.gusbell.tech/graphql', // overwritten by process.env.GQL_HOST
     },
   },
 })
