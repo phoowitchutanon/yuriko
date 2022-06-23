@@ -917,7 +917,7 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-graphql-request@^4.4.8":
+"@graphql-codegen/typescript-graphql-request@^4.4.10":
   version "4.4.10"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-graphql-request/-/typescript-graphql-request-4.4.10.tgz#8ffab15dfdf1143eae01759e4fb99430051821b0"
   integrity sha512-kKbVKAANDZjCQdFWQRDV49ItIKBWUQgiBbbgwE3DDwVwacQS40ggTtvh24J2sO/vjJBU+JqzD8IJS67+Euzrmg==
@@ -927,7 +927,7 @@
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/typescript-operations@^2.4.0":
+"@graphql-codegen/typescript-operations@^2.4.2":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.4.2.tgz#374da9f2ec0b60dee0ebbc22c6b885f0d7f3aacb"
   integrity sha512-0/Jk+FxJVOdznSJ+G3KKPbMr2gK67yQetUAUS0FzV9FptVDFkklK/BazKqJJE5dNrj9ubuI2BafXPzSTN4M2Ug==
@@ -938,7 +938,7 @@
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/typescript@^2.4.11", "@graphql-codegen/typescript@^2.5.1":
+"@graphql-codegen/typescript@^2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.5.1.tgz#5131485ff3ac83d5bc0aae11a2af0c9bdc08854c"
   integrity sha512-D/9V2VfVIE4Mu5UiMGQtxyFU5xe1ZkAZi8g/IsqymW8rqlhTwsGhtk4JR55qPfOYxR8G94RJSJpzgNakRneytw==
@@ -5223,7 +5223,7 @@ graphql-query-complexity@^0.7.0:
   dependencies:
     lodash.get "^4.4.2"
 
-graphql-request@^4.0.0, graphql-request@^4.2.0:
+graphql-request@^4.0.0, graphql-request@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-4.3.0.tgz#b934e08fcae764aa2cdc697d3c821f046cb5dbf2"
   integrity sha512-2v6hQViJvSsifK606AliqiNiijb1uwWp6Re7o0RTyH+uRTv/u7Uqm2g4Fjq/LgZIzARB38RZEvVBFOQOVdlBow==
@@ -7102,19 +7102,19 @@ nuxi@^3.0.0-rc.4:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-graphql-client@^0.0.32:
-  version "0.0.32"
-  resolved "https://registry.yarnpkg.com/nuxt-graphql-client/-/nuxt-graphql-client-0.0.32.tgz#01041ea1f987095fee257fa9743a2732a067a18d"
-  integrity sha512-Jp6RBlTHWQQssFYZDONHbGlubC9g+sbuX7F8FNGiaQAOK+yVkXf8DfLz+rVW3fUoRpHKtfmWhDbMFRwecNM6gQ==
+nuxt-graphql-client@0.0.33:
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/nuxt-graphql-client/-/nuxt-graphql-client-0.0.33.tgz#7d587eb0519e127663cc9b54f3f776cc3d89684a"
+  integrity sha512-NK8Pyz/iNlSpUIDwxOV/T9FeeZIwnG7co9owEY4ydjXDY/hsN4QE8x+2MTE+uhKDmAvkOudmnfmTdVx+s59i5Q==
   dependencies:
     "@graphql-codegen/cli" "^2.6.2"
-    "@graphql-codegen/typescript" "^2.4.11"
-    "@graphql-codegen/typescript-graphql-request" "^4.4.8"
-    "@graphql-codegen/typescript-operations" "^2.4.0"
+    "@graphql-codegen/typescript" "^2.5.1"
+    "@graphql-codegen/typescript-graphql-request" "^4.4.10"
+    "@graphql-codegen/typescript-operations" "^2.4.2"
     "@nuxt/kit" "^3.0.0-rc.3"
     defu "^6.0.0"
     graphql "^16.5.0"
-    graphql-request "^4.2.0"
+    graphql-request "^4.3.0"
     scule "^0.2.1"
 
 nuxt-windicss@^2.4.2:
