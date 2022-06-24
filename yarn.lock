@@ -3468,14 +3468,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:7.2.1":
-  version: 7.2.1
-  resolution: "concurrently@npm:7.2.1"
+"concurrently@npm:7.2.2":
+  version: 7.2.2
+  resolution: "concurrently@npm:7.2.2"
   dependencies:
     chalk: "npm:^4.1.0"
     date-fns: "npm:^2.16.1"
     lodash: "npm:^4.17.21"
-    rxjs: "npm:^6.6.3"
+    rxjs: "npm:^7.0.0"
     shell-quote: "npm:^1.7.3"
     spawn-command: "npm:^0.0.2-1"
     supports-color: "npm:^8.1.0"
@@ -3483,7 +3483,7 @@ __metadata:
     yargs: "npm:^17.3.1"
   bin:
     concurrently: dist/bin/concurrently.js
-  checksum: 116d47e310c10b6929a48866d46bb6c3788f3a6312ef9dd2225822b5dc7da3d06d39081c3ffafc3e9c7c64da811698a61220e36f0d08fb40df335bc1170f8c3d
+  checksum: 9824622866e16446be16bc4e3902d02ce95c5d1290f5171c85c9f99bc23e7f3e3e24b6cd65171fc7c13eac94798d2bbaee7fb890667a4ff3c1cb65e7329bd5b0
   languageName: node
   linkType: hard
 
@@ -9583,16 +9583,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^6.6.3":
-  version: 6.6.7
-  resolution: "rxjs@npm:6.6.7"
-  dependencies:
-    tslib: "npm:^1.9.0"
-  checksum: f593c1d7a24848a2c937d31b806b7940a7fad61902eea6893dad51298f42291585c3339112eec876671a5cd0eb3cf73da14e45a91255440db239c8f640f57ada
-  languageName: node
-  linkType: hard
-
-"rxjs@npm:^7.5.5":
+"rxjs@npm:^7.0.0, rxjs@npm:^7.5.5":
   version: 7.5.5
   resolution: "rxjs@npm:7.5.5"
   dependencies:
@@ -10604,7 +10595,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 441af59dc42ad4ae57140e62cb362369620c6076845c2c2b0ecc863c1d719ce24fdbc301e9053433fef43075e061bf84b702318ff1204b496a5bba10baf9eb9f
@@ -11782,7 +11773,7 @@ __metadata:
     "@antfu/eslint-config": "npm:0.25.1"
     "@commitlint/cli": "npm:17.0.2"
     "@commitlint/config-conventional": "npm:17.0.2"
-    concurrently: "npm:7.2.1"
+    concurrently: "npm:7.2.2"
     eslint: "npm:8.17.0"
     husky: "npm:8.0.1"
     turbo: "npm:latest"
