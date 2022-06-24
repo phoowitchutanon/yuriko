@@ -53,11 +53,10 @@ export default defineNuxtConfig({
   plugins: [],
 
   modules: [
-    'nuxt-graphql-client',
-    '@vueuse/nuxt',
   ],
 
   buildModules: [
+    '@nuxt3-graphql/urql',
     'nuxt-windicss',
     '@vueuse/nuxt',
   ],
@@ -66,9 +65,7 @@ export default defineNuxtConfig({
 
   windicss: { analyze: true },
 
-  runtimeConfig: {
-    public: {
-      GQL_HOST: process.env.BASE_URL || 'https://api.gusbell.tech/graphql', // overwritten by process.env.GQL_HOST
-    },
+  urql: {
+    url: process.env.BASE_URL || 'https://api.gusbell.tech/graphql',
   },
 })
