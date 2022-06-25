@@ -59,42 +59,42 @@ jobs:
       - name: Build ⚒️
         run: yarn workspace client build
 
-  lighthouse-client:
-    name: Run lighthouse audit
-    needs:
-      - build-client
-    runs-on: ${{ matrix.os }}
+#   lighthouse-client:
+#     name: Run lighthouse audit
+#     needs:
+#       - build-client
+#     runs-on: ${{ matrix.os }}
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [16]
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest]
+#         node: [16]
 
-    steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@master
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+#     steps:
+#       - name: Checkout 🛎
+#         uses: actions/checkout@master
+#         with:
+#           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Setup node 🏗
-        uses: actions/setup-node@v3.3.0
-        with:
-          node-version: ${{ matrix.node }}
-          cache: 'yarn'
+#       - name: Setup node 🏗
+#         uses: actions/setup-node@v3.3.0
+#         with:
+#           node-version: ${{ matrix.node }}
+#           cache: 'yarn'
 
-      - name: Install dependencies 👨🏻‍💻
-        run: yarn --immutable
+#       - name: Install dependencies 👨🏻‍💻
+#         run: yarn --immutable
 
-      - name: Run lighthouse audit 💡
-        run: yarn workspace client lhci:desktop
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+#       - name: Run lighthouse audit 💡
+#         run: yarn workspace client lhci:desktop
+#         env:
+#           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
-      - name: Collect lighthouse artifacts 📦
-        uses: actions/upload-artifact@v3
-        with:
-          name: lighthouse-results
-          path: .lighthouseci
+#       - name: Collect lighthouse artifacts 📦
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: lighthouse-results
+#           path: .lighthouseci
 
   build-server:
     name: Build server
