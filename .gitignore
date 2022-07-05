@@ -1,24 +1,11 @@
-# dependencies
 node_modules
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-yarn-debug.log*
-yarn-error.log*
-
-# turbo
 .turbo
+.env
 
-# client
-
-apps/client/node_modules
-apps/client/*.log*
-apps/client/.nuxt
-apps/client/.nitro
-apps/client/.cache
-apps/client/.output
-apps/client/.env
-apps/client/dist
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

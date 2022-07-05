@@ -1,34 +1,34 @@
-import { Field, ID, ObjectType } from 'type-graphql'
+import { Field, Float, Int, ObjectType } from 'type-graphql'
 
 import { baseResponse } from './default.types'
 
 @ObjectType()
 export class vnDbStatus {
-  @Field(() => Number)
+  @Field(() => Int)
     users: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     threads: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     tags: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     releases: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     producers: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     chars: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     posts: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     vn: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     traits: number
 }
 
@@ -40,10 +40,10 @@ export class vnDbStatusResponse extends baseResponse {
 
 @ObjectType()
 class vnInfoAnime {
-  @Field(() => ID)
+  @Field(() => Int)
     id: number
 
-  @Field(() => Number, { nullable: true })
+  @Field(() => Int, { nullable: true })
     ann_id?: number
 
   @Field(() => String, { nullable: true })
@@ -55,7 +55,7 @@ class vnInfoAnime {
   @Field(() => String, { nullable: true })
     title_kanji?: string
 
-  @Field(() => Number, { nullable: true })
+  @Field(() => Int, { nullable: true })
     year?: number
 
   @Field(() => String, { nullable: true })
@@ -79,13 +79,13 @@ class vnInfoLinks {
 
 @ObjectType()
 class vnInfoImageFlagging {
-  @Field(() => Number)
+  @Field(() => Int)
     votecount: number
 
-  @Field(() => Number, { nullable: true })
+  @Field(() => Float, { nullable: true })
     sexual_avg?: number
 
-  @Field(() => Number, { nullable: true })
+  @Field(() => Float, { nullable: true })
     violence_avg?: number
 }
 
@@ -94,37 +94,37 @@ class vnInfoScreens {
   @Field(() => String)
     image: string
 
-  @Field(() => String)
+  @Field(() => Int)
     rid: number
 
-  @Field(() => String)
+  @Field(() => Boolean)
     nsfw: boolean
 
   @Field(() => vnInfoImageFlagging)
     flagging: vnInfoImageFlagging
 
-  @Field(() => Number)
+  @Field(() => Int)
     height: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     width: number
 }
 
 @ObjectType()
 class vnInfoRelations {
-  @Field(() => ID)
+  @Field(() => Int)
     id: number
 
-  @Field()
+  @Field(() => String)
     relation: string
 
-  @Field()
+  @Field(() => String)
     title: string
 
-  @Field({ nullable: true })
+  @Field(() => String, { nullable: true })
     orignal?: string
 
-  @Field()
+  @Field(() => Boolean)
     official: boolean
 }
 
@@ -142,10 +142,10 @@ class vnInfoRelations {
 
 @ObjectType()
 class vnInfoStaff {
-  @Field(() => Number)
+  @Field(() => Int)
     sid: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     aid: number
 
   @Field(() => String)
@@ -163,7 +163,7 @@ class vnInfoStaff {
 
 @ObjectType()
 export class vnInfo {
-  @Field(() => Number)
+  @Field(() => Int)
     id: number
 
   @Field(() => String)
@@ -187,7 +187,7 @@ export class vnInfo {
   @Field(() => String, { nullable: true })
     aliases?: string
 
-  @Field(() => Number, { nullable: true })
+  @Field(() => Int, { nullable: true })
     length?: number
 
   @Field(() => String, { nullable: true })
@@ -214,13 +214,13 @@ export class vnInfo {
   // @Field(() => [vnInfoTags])
   //   tags: vnInfoTags[]
 
-  @Field(() => Number)
+  @Field(() => Float)
     popularity: number
 
-  @Field(() => Number)
+  @Field(() => Float)
     rating: number
 
-  @Field(() => Number)
+  @Field(() => Int)
     votecount: number
 
   @Field(() => [vnInfoScreens])

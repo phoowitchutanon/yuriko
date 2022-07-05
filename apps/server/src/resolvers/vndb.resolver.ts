@@ -1,5 +1,6 @@
 import {
   Arg,
+  Int,
   Query,
   Resolver,
 } from 'type-graphql'
@@ -23,7 +24,7 @@ export class vndbResolver {
   }
 
   @Query(() => vnInfoResponse)
-  async getVnById(@Arg('id') id: number): Promise<vnInfoResponse | undefined> {
+  async getVnById(@Arg('id', () => Int) id: number): Promise<vnInfoResponse | undefined> {
     try {
       const data = await vndbService.getVisualNovelById(id)
       const dataItems = { ...data.items }['0']
@@ -36,7 +37,7 @@ export class vndbResolver {
   }
 
   @Query(() => vnInfoResponse)
-  async getVnByName(@Arg('name') name: string): Promise<vnInfoResponse | undefined> {
+  async getVnByName(@Arg('name', () => String) name: string): Promise<vnInfoResponse | undefined> {
     try {
       const data = await vndbService.getVisualNovelByName(name)
       const dataItems = { ...data.items }['0']

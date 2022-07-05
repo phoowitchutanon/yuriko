@@ -4,19 +4,6 @@ node_modules
 *.lock
 *.yarn
 
-apps/client/.lighthouseci
-apps/client/.nuxt
-apps/client/.output
-apps/client/node_modules
-apps/client/*.env
-apps/client/*.sample
-
-apps/server/dist
-apps/server/node_modules
-apps/server/*.env
-apps/server/*.prod
-apps/server/*.sample
-
 .yarn/*
 !.yarn/cache
 !.yarn/patches
