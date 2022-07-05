@@ -10,7 +10,7 @@ import { vnDbStatusResponse, vnInfoResponse } from '../types/vn.types'
 import vndbService from '../services/vndb.service'
 
 @Resolver()
-export class vndbResolver {
+export default class vndbResolver {
   @Query(() => vnDbStatusResponse)
   async getStatus(): Promise<vnDbStatusResponse | undefined> {
     try {
@@ -19,7 +19,7 @@ export class vndbResolver {
     }
     catch (err: unknown) {
       if (typeof err === 'string')
-        return { message: 'Internal server error', error: err, ok: false }
+        return { message: 'Internal server error', ok: false }
     }
   }
 
@@ -32,7 +32,7 @@ export class vndbResolver {
     }
     catch (err: unknown) {
       if (typeof err === 'string')
-        return { message: 'Internal server error', error: err, ok: false }
+        return { message: 'Internal server error', ok: false }
     }
   }
 
@@ -45,7 +45,7 @@ export class vndbResolver {
     }
     catch (err: unknown) {
       if (typeof err === 'string')
-        return { message: 'Internal server error', error: err, ok: false }
+        return { message: 'Internal server error', ok: false }
     }
   }
 }

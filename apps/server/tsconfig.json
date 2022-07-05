@@ -4,6 +4,18 @@
     "baseUrl": "src",
     "outDir": "dist",
     "paths": {
+      "@interfaces/*": ["interfaces/*"],
+      "@middleware/*": ["middleware/*"],
+      "@resolvers/*": ["resolvers/*"],
+      "@services/*": ["services/*"],
+      "@qltypes/*": ["types/*"],
+      "@utils/*": ["utils/*"],
+      "@interfaces": ["interfaces/index.ts"],
+      "@middleware": ["middleware/index.ts"],
+      "@resolvers": ["resolvers/index.ts"],
+      "@services": ["services/index.ts"],
+      "@qltypes": ["types/index.ts"],
+      "@utils": ["utils/index.ts"]
     }
   },
   "include": ["src/**/*.ts"],
