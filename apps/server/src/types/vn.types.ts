@@ -3,7 +3,7 @@ import { Field, Float, Int, ObjectType } from 'type-graphql'
 import { baseResponse } from './default.types'
 
 @ObjectType()
-export class vnDbStatus {
+export class vnStatus {
   @Field(() => Int)
     users: number
 
@@ -33,9 +33,9 @@ export class vnDbStatus {
 }
 
 @ObjectType({ implements: baseResponse })
-export class vnDbStatusResponse extends baseResponse {
-  @Field(() => vnDbStatus, { nullable: true })
-    data?: vnDbStatus
+export class vnStatusResponse extends baseResponse {
+  @Field(() => vnStatus, { nullable: true })
+    data?: vnStatus
 }
 
 @ObjectType()

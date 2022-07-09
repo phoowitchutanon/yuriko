@@ -5,47 +5,36 @@ import {
   Resolver,
 } from 'type-graphql'
 
-import { vnDbStatusResponse, vnInfoResponse } from '../types/vn.types'
+import {
+  vnInfoResponse,
+  vnStatusResponse,
+} from '@qltypes/vn.types'
 
-import vndbService from '../services/vndb.service'
+import {
+  getStatus,
+  getVisualNovelById,
+  getVisualNovelByName,
+} from '@services/vndb.service'
 
 @Resolver()
 export default class vndbResolver {
-  @Query(() => vnDbStatusResponse)
-  async getStatus(): Promise<vnDbStatusResponse | undefined> {
-    try {
-      const data = await vndbService.getStatus()
-      return { message: 'Successful', data, ok: true }
-    }
-    catch (err: unknown) {
-      if (typeof err === 'string')
-        return { message: 'Internal server error', ok: false }
-    }
+  @Query(() => vnStatusResponse)
+  async getStatus(): Promise<vnStatusResponse | undefined> {
+    const data = await getStatus()
+    return { ok: true, message: 'Successful', data }
   }
 
   @Query(() => vnInfoResponse)
   async getVnById(@Arg('id', () => Int) id: number): Promise<vnInfoResponse | undefined> {
-    try {
-      const data = await vndbService.getVisualNovelById(id)
-      const dataItems = { ...data.items }['0']
-      return { message: 'Successful', data: dataItems, ok: true }
-    }
-    catch (err: unknown) {
-      if (typeof err === 'string')
-        return { message: 'Internal server error', ok: false }
-    }
+    const data = await getVisualNovelById(id)
+    const dataItems = { ...data.items }['0']
+    return { ok: true, message: 'Successful', data: dataItems }
   }
 
   @Query(() => vnInfoResponse)
   async getVnByName(@Arg('name', () => String) name: string): Promise<vnInfoResponse | undefined> {
-    try {
-      const data = await vndbService.getVisualNovelByName(name)
-      const dataItems = { ...data.items }['0']
-      return { message: 'Successful', data: dataItems, ok: true }
-    }
-    catch (err: unknown) {
-      if (typeof err === 'string')
-        return { message: 'Internal server error', ok: false }
-    }
+    const data = await getVisualNovelByName(name)
+    const dataItems = { ...data.items }['0']
+    return { ok: true, message: 'Successful', data: dataItems }
   }
 }

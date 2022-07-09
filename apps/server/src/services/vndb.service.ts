@@ -12,7 +12,7 @@ const vndb = new VNDB('yuriko', {
   acquireTimeout: 3000,
 })
 
-async function getStatus() {
+export async function getStatus() {
   const data = await vndb
     .query('dbstats')
     .then((res) => {
@@ -24,7 +24,7 @@ async function getStatus() {
   return data
 }
 
-async function getVisualNovelById(id: number) {
+export async function getVisualNovelById(id: number) {
   const data = await vndb
     .query(
       `get vn basic,details,anime,relations,tags,stats,screens,staff (id = ${id})`,
@@ -38,7 +38,7 @@ async function getVisualNovelById(id: number) {
   return data
 }
 
-async function getVisualNovelByName(name: string) {
+export async function getVisualNovelByName(name: string) {
   const data = await vndb
     .query(
       `get vn basic,details,anime,relations,tags,stats,screens,staff (search ~ "${name}")`,
@@ -51,5 +51,3 @@ async function getVisualNovelByName(name: string) {
     })
   return data
 }
-
-export default { getStatus, getVisualNovelById, getVisualNovelByName }
