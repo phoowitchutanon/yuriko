@@ -57,7 +57,7 @@ jobs:
         run: yarn --immutable
 
       - name: Build ⚒️
-        run: yarn workspace client build
+        run: yarn build:client
 
 #   lighthouse-client:
 #     name: Run lighthouse audit
@@ -119,4 +119,4 @@ jobs:
         run: yarn --immutable
 
       - name: Build ⚒️
-        run: yarn workspace server build
+        run: yarn build:server
