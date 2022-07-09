@@ -6285,7 +6285,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-voyager@npm:^1.0.0-rc.31":
+"graphql-voyager@npm:1.0.0-rc.31":
   version: 1.0.0-rc.31
   resolution: "graphql-voyager@npm:1.0.0-rc.31"
   dependencies:
@@ -10529,7 +10529,7 @@ __metadata:
     dotenv-cli: "npm:5.1.0"
     express: "npm:4.18.1"
     graphql: "npm:15.8.0"
-    graphql-voyager: "npm:^1.0.0-rc.31"
+    graphql-voyager: "npm:1.0.0-rc.31"
     helmet: "npm:5.1.0"
     reflect-metadata: "npm:0.1.13"
     rimraf: "npm:3.0.2"
