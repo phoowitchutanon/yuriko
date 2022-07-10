@@ -12,16 +12,16 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "dev": "NODE_ENV=development dotenv -e .env turbo run dev --parallel",
-    "dev:client": "NODE_ENV=development dotenv -e .env turbo run dev --filter=\"./apps/client\"",
+    "dev": "NODE_ENV=development dotenv -e .env -- turbo run dev --parallel",
+    "dev:client": "NODE_ENV=development dotenv -e .env -- turbo run dev --filter=\"./apps/client\"",
     "dev:server": "NODE_ENV=development dotenv -e .env -- turbo run dev --filter=\"./apps/*\" --filter=\"!./apps/client\"",
     "build": "turbo run build",
     "build:package": "turbo run build --filter=\"./packages/*\"",
     "build:client": "turbo run build --filter=\"./apps/client\"",
-    "build:server": "turbo run build --filter=\"./apps/*\" --filter=\"!./apps/client\"",
+    "build:server": "turbo run build --filter=\"./apps/server\"",
     "start": "concurrently --kill-others-on-fail \"yarn start:client\"  \"yarn start:server\"",
     "start:client": "yarn workspace client start",
-    "start:server": "concurrently --kill-others-on-fail \"yarn workspace auth-server start\"  \"yarn workspace tournament-server start\" \"yarn workspace gateway-server start\"",
+    "start:server": "yarn workspace server start",
     "prepare": "husky install",
     "lint": "eslint . --fix"
   },

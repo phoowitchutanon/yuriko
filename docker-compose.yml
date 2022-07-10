@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  asuka:
+    container_name: asuka
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - BUILD_CONTEXT=server
+    restart: always
+    ports:
+      - '4000:4000'
