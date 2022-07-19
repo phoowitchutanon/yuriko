@@ -21,18 +21,35 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
+        with:
+          fetch-depth: 1
 
       - name: Setup node 🏗
-        uses: actions/setup-node@v3.4.1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          cache: 'yarn'
+      
+      - name: Setup pnpm 📦
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+          run_install: false
 
+      - name: Get pnpm store directory 🏎
+        run: |
+          echo "::set-output name=pnpm_cache_dir::~/.pnpm-store"
+      - name: Setup pnpm cache 📦
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node16-pnpm7-yuriko-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-node16-pnpm7-yuriko-
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --immutable
+        run: pnpm install
 
-      - name: Run linter 👀
-        run: yarn lint
+      - name: Lint 👀
+        run: pnpm lint
 
   build-client:
     name: Build client
@@ -46,18 +63,35 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
+        with:
+          fetch-depth: 1
 
       - name: Setup node 🏗
-        uses: actions/setup-node@v3.4.1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          cache: 'yarn'
+      
+      - name: Setup pnpm 📦
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+          run_install: false
 
+      - name: Get pnpm store directory 🏎
+        run: |
+          echo "::set-output name=pnpm_cache_dir::~/.pnpm-store"
+      - name: Setup pnpm cache 📦
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node16-pnpm7-yuriko-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-node16-pnpm7-yuriko-
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --immutable
+        run: pnpm install
 
       - name: Build ⚒️
-        run: yarn build:client
+        run: pnpm build:client
 
 #   lighthouse-client:
 #     name: Run lighthouse audit
@@ -108,15 +142,32 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
+        with:
+          fetch-depth: 1
 
       - name: Setup node 🏗
-        uses: actions/setup-node@v3.4.1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-          cache: 'yarn'
+      
+      - name: Setup pnpm 📦
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+          run_install: false
 
+      - name: Get pnpm store directory 🏎
+        run: |
+          echo "::set-output name=pnpm_cache_dir::~/.pnpm-store"
+      - name: Setup pnpm cache 📦
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node16-pnpm7-yuriko-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-node16-pnpm7-yuriko-
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --immutable
+        run: pnpm install
 
       - name: Build ⚒️
-        run: yarn build:server
+        run: pnpm build:server

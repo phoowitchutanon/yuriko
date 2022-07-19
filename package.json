@@ -6,12 +6,13 @@
     "apps/*",
     "packages/*"
   ],
-  "packageManager": "yarn@4.0.0-rc.12",
+  "packageManager": "pnpm@5.7.2",
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "dotenv -- turbo run dev --parallel",
     "dev:client": "dotenv -- turbo run dev --filter=\"./apps/client\"",
     "dev:server": "dotenv -- turbo run dev --filter=\"./apps/*\" --filter=\"!./apps/client\"",
@@ -23,22 +24,21 @@
     "start:client": "dotenv -- turbo run start --filter=\"./apps/client\"",
     "start:server": "dotenv -- turbo run start --filter=\"./apps/server\"",
     "prepare": "husky install",
-    "lint": "eslint . --fix"
+    "lint": "turbo run lint"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.25.2",
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
     "@swc/cli": "0.1.57",
     "@swc/core": "1.2.218",
-    "concurrently": "7.3.0",
+    "concurrently": "7.2.2",
     "dotenv": "16.0.1",
     "dotenv-cli": "6.0.0",
     "eslint": "8.20.0",
     "husky": "8.0.1",
     "nodemon": "2.0.19",
     "rimraf": "3.0.2",
-    "turbo": "latest",
+    "turbo": "1.2.3",
     "typescript": "4.7.4"
   }
 }
