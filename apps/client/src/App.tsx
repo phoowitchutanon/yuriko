@@ -1,8 +1,20 @@
 import type { Component } from 'solid-js';
+import { Routes, Route } from 'solid-app-router';
+
+import Nav from './components/nav'
+
+import Home from './pages/home'
+import Search from './pages/search'
 
 const App: Component = () => {
   return (
-    <p class="text-4xl text-green-700 text-center py-20">Hello windi-css!</p>
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" component={Home} />
+        <Route path="/search" component={Search} />
+      </Routes>
+    </>
   );
 };
 
