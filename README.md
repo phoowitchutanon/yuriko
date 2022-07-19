@@ -13,25 +13,19 @@
 Install dependencies:
 
 ```bash
-yarn install
+pnpm i
 ```
 
 ## Development
 
 ```bash
-yarn dev
-```
+pnpm dev
 
-Client only:
+# client only
+pnpm dev:client
 
-```bash
-yarn workspace client dev
-```
-
-Server only:
-
-```bash
-yarn workspace server dev
+# server only
+pnpm dev:server
 ```
 
 ## Production
@@ -42,18 +36,4 @@ yarn build
 yarn start
 ```
 
-Client only:
-
-```bash
-yarn workspace client build
-
-yarn workspace client start
-```
-
-Server only:
-
-```bash
-yarn workspace server build
-
-yarn workspace server start
-```
+![owo](https://cdn.donmai.us/original/3b/a5/3ba5a21a3f333f0e582610e19b4b781d.png)
