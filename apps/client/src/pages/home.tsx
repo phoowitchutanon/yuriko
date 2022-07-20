@@ -1,5 +1,7 @@
 import type { Component } from 'solid-js';
 
+import Footer from '../components/footer';
+
 const Home: Component = () => {
   return (
     <>
@@ -8,6 +10,7 @@ const Home: Component = () => {
           Yuriko
         </h1>
       </div>
+      <Footer />
     </>
   );
 };

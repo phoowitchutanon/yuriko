@@ -19,11 +19,6 @@ const Nav: Component = () => {
               </h1>
             </Link>
           </div>
-          <div class="flex flex-row items-center gap-4 px-8">
-            <a class="mt-2" href="https://www.github.com/gusb3ll/yuriko" target="_blank">
-              <FaBrandsGithub color="white" size="32px" />
-            </a>
-          </div>
         </div>
       </nav>
     </>

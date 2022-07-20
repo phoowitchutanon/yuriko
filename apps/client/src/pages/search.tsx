@@ -1,5 +1,6 @@
 import type { Component } from 'solid-js';
-import { createSignal } from 'solid-js';
+import { createSignal, Show, Suspense  } from 'solid-js';
+import { createGraphQLClient, gql } from '@solid-primitives/graphql';
 
 const Home: Component = () => {
   const [name, setName] = createSignal('');
@@ -22,7 +23,8 @@ const Home: Component = () => {
               </h1>
             </button>
           </div>
-          <h1 class="text-2xl">Current Name : { name }</h1>
+          <Suspense fallback={ <div class="text-2xl text-indigo-500">Loading</div> }>
+          </Suspense>
         </div>
       </div>
     </>

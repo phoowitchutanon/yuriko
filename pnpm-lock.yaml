@@ -34,6 +34,7 @@ importers:
 
   apps/client:
     specifiers:
+      '@solid-primitives/graphql': ^1.1.1
       solid-app-router: 0.4.1
       solid-icons: 0.5.0
       solid-js: 1.4.7
@@ -45,6 +46,7 @@ importers:
       solid-app-router: 0.4.1_solid-js@1.4.7
       solid-js: 1.4.7
     devDependencies:
+      '@solid-primitives/graphql': 1.1.1_solid-js@1.4.7
       solid-icons: 0.5.0_solid-js@1.4.7
       typescript: 4.7.4
       vite: 3.0.2
@@ -1077,6 +1079,26 @@ packages:
   /@protobufjs/utf8/1.1.0:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
+
+  /@solid-primitives/graphql/1.1.1_solid-js@1.4.7:
+    resolution: {integrity: sha512-1Hf5JUujtZJdFO9Sf6gJKmCdUGQavHYoiuhpY1jOd8HKV3mYIXjV3gIwwQjNIEstSifnQ9JJdgirPDNcU0cd8g==}
+    peerDependencies:
+      solid-js: ^1.4.3
+    dependencies:
+      '@solid-primitives/utils': 2.2.1_solid-js@1.4.7
+      node-fetch: 2.6.7
+      solid-js: 1.4.7
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
+  /@solid-primitives/utils/2.2.1_solid-js@1.4.7:
+    resolution: {integrity: sha512-vaBO3MGOpjzitbSAVuJkYZnzNPRl6sRrw2do390DEBbfeqMfPpW4fAEb5/tI4b5T13V1xAY+giHoxqvVg2SRhQ==}
+    peerDependencies:
+      solid-js: ^1.4.1
+    dependencies:
+      solid-js: 1.4.7
+    dev: true
 
   /@swc/cli/0.1.57_@swc+core@1.2.218:
     resolution: {integrity: sha512-HxM8TqYHhAg+zp7+RdTU69bnkl4MWdt1ygyp6BDIPjTiaJVH6Dizn2ezbgDS8mnFZI1FyhKvxU/bbaUs8XhzQg==}
@@ -4354,7 +4376,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: false
 
   /node-releases/2.0.6:
     resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
@@ -5368,7 +5389,6 @@ packages:
 
   /tr46/0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-    dev: false
 
   /tree-kill/1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
@@ -5817,7 +5837,6 @@ packages:
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-    dev: false
 
   /whatwg-fetch/3.6.2:
     resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
@@ -5833,7 +5852,6 @@ packages:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-    dev: false
 
   /which-boxed-primitive/1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}
