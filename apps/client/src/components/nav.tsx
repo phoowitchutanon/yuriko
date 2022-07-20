@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import type { Component } from "solid-js"
 import { Link } from "solid-app-router"
 import { FaBrandsGithub } from "solid-icons/fa"
 

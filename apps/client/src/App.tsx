@@ -1,5 +1,5 @@
-import type { Component } from 'solid-js';
-import { Routes, Route } from 'solid-app-router';
+import type { Component } from 'solid-js'
+import { Routes, Route } from 'solid-app-router'
 
 import Nav from './components/nav'
 
