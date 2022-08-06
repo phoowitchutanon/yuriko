@@ -30,7 +30,7 @@
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
     "@swc/cli": "0.1.57",
-    "@swc/core": "1.2.223",
+    "@swc/core": "1.2.224",
     "concurrently": "7.3.0",
     "dotenv": "16.0.1",
     "dotenv-cli": "6.0.0",
