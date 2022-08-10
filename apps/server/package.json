@@ -25,7 +25,7 @@
     "winston": "3.8.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.26.0",
+    "@antfu/eslint-config": "0.26.1",
     "@types/compression": "1.7.2",
     "@types/express": "4.17.13",
     "@types/node": "17.0.36"
