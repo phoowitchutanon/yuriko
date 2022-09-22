@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "solid-app-router": "0.4.2",
-    "solid-js": "1.5.5"
+    "solid-js": "1.5.6"
   },
   "devDependencies": {
     "@solid-primitives/graphql": "1.4.0",
