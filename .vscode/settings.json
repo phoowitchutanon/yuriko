@@ -1,8 +1,12 @@
 {
-  "prettier.enable": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "css.lint.unknownAtRules": "ignore",
-  "vue3snippets.enable-compile-vue-file-on-did-save-code": false
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		"**/node_modules": true
+	}
 }
