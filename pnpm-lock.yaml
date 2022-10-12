@@ -100,7 +100,7 @@ importers:
       reflect-metadata: 0.1.13
       rxjs: 7.5.7
       ts-morph: 16.0.0
-      vndb-api: ^1.0.3
+      vndb-api: 1.0.3
     dependencies:
       '@babel/runtime': 7.19.0
       '@nestjs/apollo': 10.1.0_s62a6rsboditzowhudgku7onfy
