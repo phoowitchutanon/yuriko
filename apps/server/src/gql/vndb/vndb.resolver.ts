@@ -9,4 +9,5 @@ export class VndbResolver {
 	hello(): string {
 		return 'hello world'
 	}
+
 }
