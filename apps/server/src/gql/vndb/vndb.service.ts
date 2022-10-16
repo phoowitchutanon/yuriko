@@ -13,7 +13,6 @@ export class VndbService {
 		maxConnection: 10,
 		idleTimeoutMillis: 3000,
 		acquireTimeout: 3000
-
 	});
 
 	async getStatus() {
